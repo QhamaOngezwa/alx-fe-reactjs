@@ -10,7 +10,7 @@ function App() {
       <Header />
       <MainContent />
       <Footer />
-      <UserProfile name="Qhama" age="26" bio="Creative enthusiast" />
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
     </>
   );
 }
