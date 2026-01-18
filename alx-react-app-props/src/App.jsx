@@ -3,7 +3,7 @@ import Header from "./Header";
 import MainContent from "./MainContent";
 import Footer from "./Footer";
 import UserProfile from "./components/UserProfile";
-import UserContext from "../UserContext";
+import UserContext from "./components/UserContext";
 function App() {
   return (
     <>
