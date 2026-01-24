@@ -15,3 +15,4 @@ const RecipeList = () => {
     );
 
 };;
+export RecipeList;;
