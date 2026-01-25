@@ -18,4 +18,4 @@ const FavoritesList = () => {
     </div>
   );
 };
-export FavoritesList;
+export default FavoritesList;
