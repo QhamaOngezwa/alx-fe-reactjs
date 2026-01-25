@@ -2,6 +2,7 @@ import { useRecipeStore } from "./src/useRecipeStore";
 
 const RecipeList = () => {
     const recipes = useRecipeStore(state =. state.recipes);
+  filteredRecipes: [],
 
     return (
         <div>
@@ -15,4 +16,4 @@ const RecipeList = () => {
     );
 
 };;
-export RecipeList;;
+export RecipeList;
