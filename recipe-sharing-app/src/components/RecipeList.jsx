@@ -1,9 +1,9 @@
 import { useRecipeStore } from "./src/useRecipeStore";
 
 const RecipeList = () => {
-    const recipes = useRecipeStore(state =. state.recipes);
-  filteredRecipes: [],
-
+const filteredRecipes = useRecipeStore(
+    (state) => state.filteredRecipes
+  );
     return (
         <div>
             {recipes.map(recipe => (
