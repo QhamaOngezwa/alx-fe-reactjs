@@ -1,34 +1,54 @@
 import { useState } from "react";
 
 function Search() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const handleSearch = async () => {
+    setLoading(true);
+    setError(false);
+    setUser(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log({ name, email });
-    setName("");
-    setEmail("");
+    try {
+      const response = await fetch(`https://api.github.com/users/${username}`);
+
+      if (!response.ok) {
+        throw new Error("User not found");
+      }
+
+      const data = await response.json();
+      setUser(data);
+    } catch (err) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
       <input
         type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
+        placeholder="Search GitHub username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
       />
 
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-      />
+      <button onClick={handleSearch}>Search</button>
+      {loading && <p>Loading...</p>}
 
-      <button type="submit">Submit</button>
-    </form>
+      {error && <p>Looks like we can’t find the user</p>}
+
+      {user && (
+        <div>
+          <img src={user.avatar_url} alt={user.name} width="100" />
+          <h3>{user.name}</h3>
+          <a href={user.html_url} target="_blank" rel="noreferrer">
+            View GitHub Profile
+          </a>
+        </div>
+      )}
+    </div>
   );
 }
 
