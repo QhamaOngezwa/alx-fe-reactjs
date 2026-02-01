@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import UserInformation from "./components/UserInformation";
+import githubService from "./services/githubService";
 
 function App() {
   const [count, setCount] = useState(0);
