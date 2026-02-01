@@ -1,5 +1,8 @@
+import axios from "axios";
+
 function fetchUserData(username) {
   const apiUrl = `https://api.github.com/users/${username}`;
+  axios.get(apiUrl);
   return fetch(apiUrl)
     .then((response) => {
       if (!response.ok) {
