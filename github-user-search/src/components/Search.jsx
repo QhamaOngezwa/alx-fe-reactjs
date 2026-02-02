@@ -5,7 +5,8 @@ function Search() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const handleSearch = async () => {
+  const handleSearch = async (e) => {
+    e.preventDefault();
     setLoading(true);
     setError(false);
     setUser(null);
@@ -27,17 +28,19 @@ function Search() {
   };
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search GitHub username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-
-      <button onClick={handleSearch}>Search</button>
+      <form>
+        <input
+          type="text"
+          placeholder="Search GitHub username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <button onClick={handleSearch}>Search</button>
+        onSubmit={handleSearch}
+      </form>
       {loading && <p>Loading...</p>}
 
-      {error && <p>Looks like we can’t find the user</p>}
+      {error && <p>Looks like we cant find the user</p>}
 
       {user && (
         <div>
