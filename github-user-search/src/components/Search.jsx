@@ -10,7 +10,7 @@ function Search() {
     setLoading(true);
     setError(false);
     setUser(null);
-
+    fetchUserData();
     try {
       const response = await fetch(`https://api.github.com/users/${username}`);
 
