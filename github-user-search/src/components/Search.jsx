@@ -28,15 +28,16 @@ function Search() {
   };
   return (
     <div>
-      <form>
-        <input
+      <form onSubmit={handleSearch} width="400px" margin="auto">
+        <input 
           type="text"
           placeholder="Search GitHub username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <button type="submit">Search</button>
-        onSubmit={handleSearch}
+        <input type="submit" value="Search" placeholder="enter location" />
+        <input type="submit" value="Search" placeholder="enter repository" />
+        <button type="submit" onClick={ }>Search</button>
       </form>
       <login></login>
       {loading && <p>Loading...</p>}
