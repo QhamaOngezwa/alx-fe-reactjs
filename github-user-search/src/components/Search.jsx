@@ -35,9 +35,10 @@ function Search() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <button onClick={handleSearch}>Search</button>
+        <button type="submit">Search</button>
         onSubmit={handleSearch}
       </form>
+      <login></login>
       {loading && <p>Loading...</p>}
 
       {error && <p>Looks like we cant find the user</p>}
