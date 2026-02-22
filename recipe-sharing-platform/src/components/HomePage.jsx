@@ -13,7 +13,7 @@ function HomePage() {
       <h1 className="text-3xl font-bold mb-6 text-center">
         Recipes
       </h1>
-      <div className="grid gap-6 sm:grid-cols-2 hover:shadow-lg">
+      <div className="grid-cols-1 gap-6 sm:grid-cols-2 hover:shadow-lg">
         {recipes.map((recipe) => (
           <div
             key={recipe.id}
