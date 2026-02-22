@@ -21,7 +21,7 @@ function RecipeDetail() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="max-w-3xl mx-auto p-6 shadow-lg rounded-xl bg-white mt-10">
       <img
         src={recipe.image}
         alt={recipe.title}
