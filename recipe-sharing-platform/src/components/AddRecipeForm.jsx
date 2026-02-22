@@ -6,15 +6,38 @@ function AddRecipeForm() {
   const [summary, setSummary] = useState("");
   const [image, setImage] = useState("");
   const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
+  const validate = () => {
+    const newErrors = {};
 
+    if (!title.trim()) {
+      newErrors.title = "Title is required";
+    }
+
+    if (!ingredients.trim()) {
+      newErrors.ingredients = "Ingredients are required";
+    }
+
+    if (!instructions.trim()) {
+      newErrors.instructions = "Instructions are required";
+    }
+
+    setErrors(newErrors);
+
+    // valid if no errors
+    return Object.keys(newErrors).length === 0;
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would normally send the new recipe to your backend
-    console.log({ title, summary, image });
+    if (!validate()) return;
 
-    // After adding the recipe, navigate back to the home page
-    navigate("/");
+    // submit logic here
+    console.log("Recipe submitted!");
   };
+  console.log({ title, summary, image });
+
+  // After adding the recipe, navigate back to the home page
+  navigate("/");
 
   return (
     <div className="max-w-2xl mx-auto p-6 shadow-lg rounded-xl bg-white mt-10">
