@@ -1,11 +1,11 @@
 import {useState, useEffect} from react
-import recipesData from '../data/recipesData.json'
+import data from '../data/data.json'
 
 function HomePage() {
   const [recipes, setRecipes] = useState([])
 
   useEffect(() => {
-    setRecipes(recipesData)
+    setRecipes(data)
   }, []) 
 
   return (
