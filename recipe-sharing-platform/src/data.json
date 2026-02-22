@@ -3,12 +3,28 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": [
+      "Spaghetti",
+      "Eggs",
+      "Parmesan cheese",
+      "Bacon",
+      "Black pepper"
+    ],
+    "instructions": "Boil pasta. Fry bacon. Mix eggs and cheese. Combine everything and season."
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": [
+      "Chicken",
+      "Yogurt",
+      "Tomato sauce",
+      "Garlic",
+      "Garam masala"
+    ],
+    "instructions": "Marinate chicken in yogurt and spices. Grill chicken. Cook tomato sauce with garlic. Combine everything and serve."
   }
 ]
