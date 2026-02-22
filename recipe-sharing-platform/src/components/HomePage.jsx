@@ -13,11 +13,11 @@ function HomePage() {
       <h1 className="text-3xl font-bold mb-6 text-center">
         Recipes
       </h1>
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2 hover:shadow-lg">
         {recipes.map((recipe) => (
           <div
             key={recipe.id}
-            className="bg-white rounded-xl shadow-md overflow-hidden"
+            className="bg-white rounded-xl shadow-md overflow-hidden transition-shadow duration-300 grid gap-6 sm:grid-cols-2 md:grid-cols-3"
           >
             <img
               src={recipe.image}
