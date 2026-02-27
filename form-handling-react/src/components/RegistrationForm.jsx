@@ -12,18 +12,17 @@ function RegistrationForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!username || !email || !password) {
-      setError("Please fill in all fields.");
-      setSuccess("");
-      return;
+    let newErrors = {};
+
+    if (!email) {
+      newErrors.email = "Email is required";
     }
 
-    setError("");
-    setSuccess(`User ${username} registered successfully!`);
+    if (!password) {
+      newErrors.password = "Password is required";
+    }
 
-    setUsername("");
-    setEmail("");
-    setPassword("");
+    setErrors(newErrors);
   };
 
   return (
