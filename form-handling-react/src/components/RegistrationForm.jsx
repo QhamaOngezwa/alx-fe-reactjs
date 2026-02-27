@@ -17,6 +17,9 @@ function RegistrationForm() {
     if (!email) {
       newErrors.email = "Email is required";
     }
+    if (!username) {
+      newErrors.username = "Username is required";
+    }
 
     if (!password) {
       newErrors.password = "Password is required";
